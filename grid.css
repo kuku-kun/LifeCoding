@@ -1,0 +1,12 @@
+div{
+    border:5px solid gray;
+}
+
+#grid {
+    border:5px solid palevioletred;
+    display: grid;
+    /* 
+        article영역은 아래의 grid-template-columns에 의해 자동으로 분배된다
+    */
+    grid-template-columns: 150px 1fr;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            border: 5px solid green;
+            font-size: 60px;
+        }
+        @media(min-width:800px){
+            /* width가 800px보다 크다면 발동!
+            만약에 max-width:800px라면 
+            width가 800px보다 작을 때 발동된다*/
+            div{
+                display: none;
+            }
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Responsive
+    </div>
+</body>
+</html>

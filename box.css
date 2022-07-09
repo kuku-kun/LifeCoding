@@ -1,0 +1,26 @@
+/* h2{
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+}
+a {
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+} */
+ /* 중복 처리 */
+h2, a {
+    /* 
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    를 하나로 정리
+     */
+    border: 5px solid red;
+}
+h2 {
+    padding : 20px; 
+    margin: 20px;
+    display: block;
+    width: 100px;
+}
