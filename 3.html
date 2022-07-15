@@ -3,17 +3,76 @@
 <head>
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
+  <style>
+    h2{
+      background-color: aqua;
+      color: blue;
+    }
+    .javascript {
+      background-color:antiquewhite;
+      color: red;
+      font-weight: bold;
+    }
+    #first{
+      color: green;
+    }
+  </style>
 </head>
-<body>
+<body style="background-color:black;color: white;">
   <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" class="night"/>
+  <input type="button" value="day" class="day"/>
+  <input type="button" value="light" class="light"/>
   <ol>
     <li><a href="1.html">HTML</a></li>
     <li><a href="2.html">CSS</a></li>
     <li><a href="3.html">JavaScript</a></li>
   </ol>
+  <p>boolean관련 홈페이지:<a href="JsBoolean.html">JsBoolean</a></p>
   <h2>JavaScript</h2>
+  <span class="javascript">JavaScript</span>
   <p>
-    JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
+    <span id="first" class="javascript">JavaScript</span> (/ˈdʒɑːvəˌskrɪpt/[6]), 
+    often abbreviated as JS, is a high-level, dynamic, weakly typed, 
+    prototype-based, multi-paradigm, and interpreted programming language. 
+    Alongside HTML and CSS, <span class="javascript">JavaScript</span> is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
   </p>
+  <span><a href="https://www.oowgnoj.dev/review/advanced-js-1">Javascript는 interpret VS compiler?</a></span>
+  <script>
+    const light = document.querySelector('body');
+    const night = document.querySelector('.night');
+    const day = document.querySelector('.day');
+    const OnandOff = document.querySelector('.light');
+    // 만약 메소드에 대해 알고 싶으면 MDN에 가면 된다!
+
+    function OnNight(argument){
+      //argument.preventDefault();
+      light.style.background = 'black';
+      light.style.color = 'white';
+    }
+    function OnDay(argument){
+      argument.preventDefault();
+      light.style.background = 'white';
+      light.style.color = 'black';
+    }
+    function OnLightOff(argument){
+      argument.preventDefault();
+      if(light.style.background == 'black'){
+        light.style.background = 'white';
+        light.style.color = 'black';
+        OnandOff.value = 'day';
+      } else if(light.style.background == 'white'){
+        light.style.background = 'black';
+        light.style.color='white';
+        OnandOff.value='night';
+      }
+    }
+    
+
+
+    night.addEventListener('click',OnNight);
+    day.addEventListener('click',OnDay);
+    light.addEventListener('click',OnLightOff);
+  </script>
 </body>
 </html>
