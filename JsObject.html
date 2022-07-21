@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        let coworkers = {
+            'programmer':'egoing',
+            'designer':'leezche'
+        };
+        document.write("progammer: "+coworkers['programmer']+'<br>');
+        coworkers.bookkeeper = 'duru'; // 이렇게 data를 다루면 띄어쓰기가 안된다
+        document.write("bookkeeper: "+coworkers['bookkeeper']+'<br>');
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for(let key in coworkers){ // key를 통해 value를 부른다
+            // data가 {}인 경우 주로 사용
+            document.write(key+' : '+coworkers[key]+'<br>');
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        coworkers.showAll = function(){
+            for(let key in coworkers){ // key를 통해 value를 부른다
+                // data가 {}인 경우 주로 사용
+                document.write(key+' : '+coworkers[key]+'<br>');
+            }
+        } // 이건 function showAll(){}과 동일한 코드
+        coworkers.showAll();
+        coworkers.showall = function(){
+            for(let key in coworkers){ 
+                document.write(key+' : '+this[key]+'<br>');
+            }
+        }
+        coworkers.showall();
+        // 여기서 showAll, showall 모두 coworkers의 data로 소속되어 
+        // coworkers를 출력하면 showall, showAll 모두 출력된다
+    </script>
+</body>
+</html>
